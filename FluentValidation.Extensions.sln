@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidation.Extensions", "src\FluentValidation.Extensions\FluentValidation.Extensions.csproj", "{25C1658F-BFA8-4B6F-9687-7CF89C313FCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidation.Extensions.UnitTests", "src\FluentValidation.Extensions.UnitTests\FluentValidation.Extensions.UnitTests.csproj", "{B75B4D59-81D4-430F-AB49-6E6434710D64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25C1658F-BFA8-4B6F-9687-7CF89C313FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25C1658F-BFA8-4B6F-9687-7CF89C313FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25C1658F-BFA8-4B6F-9687-7CF89C313FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25C1658F-BFA8-4B6F-9687-7CF89C313FCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75B4D59-81D4-430F-AB49-6E6434710D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75B4D59-81D4-430F-AB49-6E6434710D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75B4D59-81D4-430F-AB49-6E6434710D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75B4D59-81D4-430F-AB49-6E6434710D64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
