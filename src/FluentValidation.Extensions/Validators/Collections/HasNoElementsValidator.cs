@@ -8,7 +8,7 @@ namespace FluentValidation;
 /// <summary>
 /// Represents a validator that validates if a collection doesn't have any elements.
 /// </summary>
-public class NoElementsValidator<T, TElement> : PropertyValidator<T, IEnumerable<TElement>?>
+public class HasNoElementsValidator<T, TElement> : PropertyValidator<T, IEnumerable<TElement>?>
 {
     /// <inheritdoc />
     public override string Name => "NoElementsValidator";

@@ -1,7 +1,7 @@
 using FluentAssertions;
 using FluentValidation.Extensions.UnitTests.Common;
 
-namespace FluentValidation.Extensions.UnitTests;
+namespace FluentValidation.Extensions.UnitTests.UrlValidatorsTests;
 
 public class RelativeUrlValidatorTests
 {

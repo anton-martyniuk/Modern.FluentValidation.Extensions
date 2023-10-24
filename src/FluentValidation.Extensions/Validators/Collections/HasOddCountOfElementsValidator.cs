@@ -15,11 +15,9 @@ public class HasOddCountOfElementsValidator<T, TElement> : PropertyValidator<T, 
 
     /// <inheritdoc />
     public override bool IsValid(ValidationContext<T> context, IEnumerable<TElement>? value)
-    {
-        return value?.Count() % 2 == 1;
-    }
+        => value?.Count() % 2 == 1;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' must have an odd count of elements.";
+        => "'{PropertyName}' collection must have an odd count of elements.";
 }

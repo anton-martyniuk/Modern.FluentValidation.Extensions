@@ -15,11 +15,9 @@ public class HasEvenCountOfElementsValidator<T, TElement> : PropertyValidator<T,
 
     /// <inheritdoc />
     public override bool IsValid(ValidationContext<T> context, IEnumerable<TElement>? value)
-    {
-        return value?.Count() % 2 == 0;
-    }
+        => value?.Count() % 2 == 0;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' must have an even count of elements.";
+        => "'{PropertyName}' collection must have an even count of elements.";
 }
