@@ -22,8 +22,8 @@ public class IsUniqueValidator<T, TElement> : PropertyValidator<T, IEnumerable<T
             return false;
         }
         
-        var enumerable = value.ToList();
-        return enumerable?.Distinct().Count() == enumerable?.Count;
+        var list = value.ToList();
+        return list.Count > 0 && list.Distinct().Count() == list.Count;
     }
 
     /// <inheritdoc />

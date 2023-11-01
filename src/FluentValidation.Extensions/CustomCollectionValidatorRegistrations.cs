@@ -149,7 +149,7 @@ public static class CustomCollectionValidatorRegistrations
     /// <typeparam name="T">Type of object being validated</typeparam>
     /// <typeparam name="TElement">Type of collection elements</typeparam>
     /// <param name="ruleBuilder">The rule builder on which the validator should be defined</param>
-    public static IRuleBuilderOptions<T, IEnumerable<TElement>> HasDuplicate<T, TElement>(this IRuleBuilder<T, IEnumerable<TElement>> ruleBuilder)
+    public static IRuleBuilderOptions<T, IEnumerable<TElement>> HasDuplicates<T, TElement>(this IRuleBuilder<T, IEnumerable<TElement>> ruleBuilder)
         => ruleBuilder.SetValidator(new HasDuplicatesValidator<T, TElement>());
     
     /// <summary>
@@ -217,9 +217,9 @@ public static class CustomCollectionValidatorRegistrations
     /// </summary>
     /// <typeparam name="T">Type of object being validated</typeparam>
     /// <typeparam name="TElement">Type of collection elements</typeparam>
-    /// <typeparam name="TDesiredType">The type of elements that the collection should have</typeparam>
     /// <param name="ruleBuilder">The rule builder on which the validator should be defined</param>
+    /// <param name="desiredType">The type of elements that the collection should have</param>
     /// <returns></returns>
-    public static IRuleBuilderOptions<T, IEnumerable<TElement>> AllElementsOfType<T, TElement, TDesiredType>(this IRuleBuilder<T, IEnumerable<TElement>> ruleBuilder)
-        => ruleBuilder.SetValidator(new AllElementsOfTypeValidator<T, TElement, TDesiredType>());
+    public static IRuleBuilderOptions<T, IEnumerable<TElement>> AllElementsOfType<T, TElement>(this IRuleBuilder<T, IEnumerable<TElement>> ruleBuilder, Type desiredType)
+        => ruleBuilder.SetValidator(new AllElementsOfTypeValidator<T, TElement>(desiredType));
 }

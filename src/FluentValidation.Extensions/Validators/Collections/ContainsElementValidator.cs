@@ -30,5 +30,5 @@ public class ContainsElementValidator<T, TElement> : PropertyValidator<T, IEnume
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' collection must contain the specified value.";
+        => $"'{{PropertyName}}' collection must contain the '{_expectedValue}' value.";
 }

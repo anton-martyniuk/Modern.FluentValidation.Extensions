@@ -28,7 +28,15 @@ public class AllMatchValidator<T, TElement> : PropertyValidator<T, IEnumerable<T
 
     /// <inheritdoc />
     public override bool IsValid(ValidationContext<T> context, IEnumerable<TElement>? value)
-        => value is not null && value.All(element => _predicate(element));
+    {
+        if (value is null)
+        {
+            return false;
+        }
+
+        var list = value.ToList();
+        return list.Count > 0 && list.All(element => _predicate(element));
+    }
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)

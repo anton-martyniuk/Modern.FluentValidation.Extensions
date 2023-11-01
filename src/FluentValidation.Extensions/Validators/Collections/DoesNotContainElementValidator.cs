@@ -30,5 +30,5 @@ public class DoesNotContainElementValidator<T, TElement> : PropertyValidator<T, 
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' collection must not contain the specified value.";
+        => $"'{{PropertyName}}' collection must not contain the '{_expectedValue}' value.";
 }
