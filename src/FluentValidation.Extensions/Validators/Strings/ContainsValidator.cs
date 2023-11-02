@@ -28,5 +28,5 @@ public class ContainsValidator<T> : PropertyValidator<T, string?>
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' must contain the specified substring.";
+        => $"'{{PropertyName}}' must contain the '{_expectedSubstring}' substring.";
 }

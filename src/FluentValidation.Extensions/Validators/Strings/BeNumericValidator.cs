@@ -12,7 +12,7 @@ public class BeNumericValidator<T> : PropertyValidator<T, string>
     public override string Name => "BeNumericValidator";
 
     /// <inheritdoc />
-    public override bool IsValid(ValidationContext<T> context, string value)
+    public override bool IsValid(ValidationContext<T> context, string? value)
         => int.TryParse(value, out _);
 
     /// <inheritdoc />

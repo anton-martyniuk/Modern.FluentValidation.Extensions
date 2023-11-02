@@ -28,5 +28,5 @@ public class StartsWithValidator<T> : PropertyValidator<T, string?>
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' must start with the specified substring.";
+        => $"'{{PropertyName}}' must start with the '{_expectedStart}' substring.";
 }

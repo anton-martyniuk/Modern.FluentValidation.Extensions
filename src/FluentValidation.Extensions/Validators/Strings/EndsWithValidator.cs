@@ -28,5 +28,5 @@ public class EndsWithValidator<T> : PropertyValidator<T, string?>
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' must end with the specified substring.";
+        => $"'{{PropertyName}}' must end with the '{_expectedEnd}' substring.";
 }

@@ -24,9 +24,9 @@ public class DoesNotEndWithValidator<T> : PropertyValidator<T, string?>
 
     /// <inheritdoc />
     public override bool IsValid(ValidationContext<T> context, string? value)
-        => value?.EndsWith(_unexpectedEnd) == false;
+        => value?.EndsWith(_unexpectedEnd) != true;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' must not end with the specified substring.";
+        => $"'{{PropertyName}}' must not end with the '{_unexpectedEnd}' substring.";
 }

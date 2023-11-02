@@ -26,8 +26,8 @@ public class LengthBetweenValidator<T> : PropertyValidator<T, string>
     public override string Name => "LengthBetweenValidator";
 
     /// <inheritdoc />
-    public override bool IsValid(ValidationContext<T> context, string value)
-        => value.Length >= _minLength && value.Length <= _maxLength;
+    public override bool IsValid(ValidationContext<T> context, string? value)
+        => value?.Length >= _minLength && value?.Length <= _maxLength;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)

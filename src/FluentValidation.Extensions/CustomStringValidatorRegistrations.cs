@@ -73,7 +73,7 @@ public static class CustomStringValidatorRegistrations
         => ruleBuilder.SetValidator(new DoesNotContainValidator<T>(unexpectedSubstring));
     
     /// <summary>
-    /// Defines a 'length between' validator on the current rule builder.
+    /// Defines a 'length between inclusive' validator on the current rule builder.
     /// Validation will fail if the string property's length is not between the specified minimum and maximum lengths.
     /// </summary>
     /// <typeparam name="T">Type of object being validated</typeparam>

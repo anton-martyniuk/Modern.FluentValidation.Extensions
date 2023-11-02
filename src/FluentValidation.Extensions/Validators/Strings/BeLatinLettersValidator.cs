@@ -13,8 +13,16 @@ public class BeLatinLettersValidator<T> : PropertyValidator<T, string>
     public override string Name => "BeLatinLettersValidator";
 
     /// <inheritdoc />
-    public override bool IsValid(ValidationContext<T> context, string value)
-        => value.All(c => c is >= 'a' and <= 'z' or >= 'A' and <= 'Z');
+    public override bool IsValid(ValidationContext<T> context, string? value)
+    {
+        if (value is null)
+        {
+            return false;
+        }
+
+        var list = value.ToList();
+        return list.Count > 0 && list.All(c => c is >= 'a' and <= 'z' or >= 'A' and <= 'Z');
+    }
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)

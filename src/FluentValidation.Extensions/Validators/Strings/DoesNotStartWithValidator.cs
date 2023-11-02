@@ -24,9 +24,9 @@ public class DoesNotStartWithValidator<T> : PropertyValidator<T, string?>
 
     /// <inheritdoc />
     public override bool IsValid(ValidationContext<T> context, string? value)
-        => value?.StartsWith(_unexpectedStart) == false;
+        => value?.StartsWith(_unexpectedStart) != true;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' must not start with the specified substring.";
+        => $"'{{PropertyName}}' must not start with the '{_unexpectedStart}' substring.";
 }

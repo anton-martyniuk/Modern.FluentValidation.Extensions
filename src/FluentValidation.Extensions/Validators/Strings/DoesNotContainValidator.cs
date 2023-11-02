@@ -24,9 +24,9 @@ public class DoesNotContainValidator<T> : PropertyValidator<T, string?>
 
     /// <inheritdoc />
     public override bool IsValid(ValidationContext<T> context, string? value)
-        => value?.Contains(_unexpectedSubstring) == false;
+        => value?.Contains(_unexpectedSubstring) != true;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' must not contain the specified substring.";
+        => $"'{{PropertyName}}' must not contain the '{_unexpectedSubstring}' substring.";
 }

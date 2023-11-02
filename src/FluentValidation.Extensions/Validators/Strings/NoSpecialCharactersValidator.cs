@@ -24,8 +24,8 @@ public class NoSpecialCharactersValidator<T> : PropertyValidator<T, string>
     public override string Name => "NoSpecialCharactersValidator";
 
     /// <inheritdoc />
-    public override bool IsValid(ValidationContext<T> context, string value)
-        => value.All(c => char.IsLetterOrDigit(c) || _allowedChars.Contains(c));
+    public override bool IsValid(ValidationContext<T> context, string? value)
+        => value is not null && value.All(c => char.IsLetterOrDigit(c) || _allowedChars.Contains(c));
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
