@@ -7,6 +7,8 @@ public class TestClass
     public string RelativeUrl { get; set; } = default!;
     
     public string StringValue { get; set; } = default!;
+    
+    public DateTime? DateTimeValue { get; set; } = default!;
 
     public List<int>? IntItems { get; set; }
 

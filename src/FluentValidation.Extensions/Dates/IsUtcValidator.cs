@@ -5,19 +5,18 @@ using FluentValidation.Validators;
 namespace FluentValidation;
 
 /// <summary>
-/// Represents a validator that validates if a date is in the future.
+/// Represents a validator that validates if a date is in Coordinated Universal Time (UTC).
 /// </summary>
-public class BeInFutureValidator<T> : PropertyValidator<T, DateTime?>
+public class IsUtcValidator<T> : PropertyValidator<T, DateTime?>
 {
     /// <inheritdoc />
-    public override string Name => "BeInFutureValidator";
+    public override string Name => "IsUtcValidator";
 
     /// <inheritdoc />
     public override bool IsValid(ValidationContext<T> context, DateTime? value)
-        => value is not null && value > DateTime.Now;
+        => value?.Kind == DateTimeKind.Utc;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' must be in the future.";
+        => "'{PropertyName}' must be in UTC.";
 }
-

@@ -7,7 +7,7 @@ namespace FluentValidation;
 /// <summary>
 /// Represents a validator that validates if a date falls on a specified day of the week.
 /// </summary>
-public class BeSpecificDayOfWeekValidator<T> : PropertyValidator<T, DateTime>
+public class BeSpecificDayOfWeekValidator<T> : PropertyValidator<T, DateTime?>
 {
     private readonly DayOfWeek _dayOfWeek;
 
@@ -24,10 +24,10 @@ public class BeSpecificDayOfWeekValidator<T> : PropertyValidator<T, DateTime>
     public override string Name => "BeSpecificDayOfWeekValidator";
 
     /// <inheritdoc />
-    public override bool IsValid(ValidationContext<T> context, DateTime value)
-        => value.DayOfWeek == _dayOfWeek;
+    public override bool IsValid(ValidationContext<T> context, DateTime? value)
+        => value != DateTime.MinValue && value != DateTime.MaxValue && value?.DayOfWeek == _dayOfWeek;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => $"'{{PropertyName}}' must be a {_dayOfWeek}.";
+        => $"'{{PropertyName}}' must be a {_dayOfWeek} day.";
 }

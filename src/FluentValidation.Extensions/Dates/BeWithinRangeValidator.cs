@@ -7,7 +7,7 @@ namespace FluentValidation;
 /// <summary>
 /// Represents a validator that validates if a date falls within a specified range of dates.
 /// </summary>
-public class BeWithinRangeValidator<T> : PropertyValidator<T, DateTime>
+public class BeWithinRangeValidator<T> : PropertyValidator<T, DateTime?>
 {
     private readonly DateTime _startDate;
     private readonly DateTime _endDate;
@@ -27,7 +27,7 @@ public class BeWithinRangeValidator<T> : PropertyValidator<T, DateTime>
     public override string Name => "BeWithinRangeValidator";
 
     /// <inheritdoc />
-    public override bool IsValid(ValidationContext<T> context, DateTime value)
+    public override bool IsValid(ValidationContext<T> context, DateTime? value)
         => value >= _startDate && value <= _endDate;
 
     /// <inheritdoc />

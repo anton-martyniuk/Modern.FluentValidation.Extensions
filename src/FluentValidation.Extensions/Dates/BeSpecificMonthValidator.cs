@@ -7,7 +7,7 @@ namespace FluentValidation;
 /// <summary>
 /// Represents a validator that validates if a date falls within a specific month.
 /// </summary>
-public class HaveMonthValidator<T> : PropertyValidator<T, DateTime>
+public class BeSpecificMonthValidator<T> : PropertyValidator<T, DateTime?>
 {
     private readonly int _month;
 
@@ -15,7 +15,7 @@ public class HaveMonthValidator<T> : PropertyValidator<T, DateTime>
     /// Initializes a new instance of the class
     /// </summary>
     /// <param name="month">The expected month.</param>
-    public HaveMonthValidator(int month)
+    public BeSpecificMonthValidator(int month)
     {
         _month = month;
     }
@@ -24,10 +24,10 @@ public class HaveMonthValidator<T> : PropertyValidator<T, DateTime>
     public override string Name => "HaveMonthValidator";
 
     /// <inheritdoc />
-    public override bool IsValid(ValidationContext<T> context, DateTime value)
-        => value.Month == _month;
+    public override bool IsValid(ValidationContext<T> context, DateTime? value)
+        => value != DateTime.MinValue && value != DateTime.MaxValue && value?.Month == _month;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => $"'{{PropertyName}}' must be in month {_month}.";
+        => $"'{{PropertyName}}' must be in {_month} month.";
 }

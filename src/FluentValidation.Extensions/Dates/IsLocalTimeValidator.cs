@@ -5,19 +5,19 @@ using FluentValidation.Validators;
 namespace FluentValidation;
 
 /// <summary>
-/// Represents a validator that validates if a date is in the future.
+/// Represents a validator that validates if a date is local time.
 /// </summary>
-public class BeInFutureValidator<T> : PropertyValidator<T, DateTime?>
+public class IsLocalTimeValidator<T> : PropertyValidator<T, DateTime?>
 {
     /// <inheritdoc />
-    public override string Name => "BeInFutureValidator";
+    public override string Name => "IsLocalTimeValidator";
 
     /// <inheritdoc />
     public override bool IsValid(ValidationContext<T> context, DateTime? value)
-        => value is not null && value > DateTime.Now;
+        => value?.Kind == DateTimeKind.Local;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
-        => "'{PropertyName}' must be in the future.";
+        => "'{PropertyName}' must be in local time.";
 }
 

@@ -7,7 +7,7 @@ namespace FluentValidation;
 /// <summary>
 /// Represents a validator that validates if a date falls on a specific day of the month.
 /// </summary>
-public class HaveDayValidator<T> : PropertyValidator<T, DateTime>
+public class BeSpecificDayValidator<T> : PropertyValidator<T, DateTime?>
 {
     private readonly int _day;
 
@@ -15,7 +15,7 @@ public class HaveDayValidator<T> : PropertyValidator<T, DateTime>
     /// Initializes a new instance of the class
     /// </summary>
     /// <param name="day">The expected day</param>
-    public HaveDayValidator(int day)
+    public BeSpecificDayValidator(int day)
     {
         _day = day;
     }
@@ -24,8 +24,8 @@ public class HaveDayValidator<T> : PropertyValidator<T, DateTime>
     public override string Name => "HaveDayValidator";
 
     /// <inheritdoc />
-    public override bool IsValid(ValidationContext<T> context, DateTime value)
-        => value.Day == _day;
+    public override bool IsValid(ValidationContext<T> context, DateTime? value)
+        => value != DateTime.MinValue && value != DateTime.MaxValue && value?.Day == _day;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)

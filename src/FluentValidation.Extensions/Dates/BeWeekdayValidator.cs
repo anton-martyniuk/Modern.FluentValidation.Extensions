@@ -7,14 +7,15 @@ namespace FluentValidation;
 /// <summary>
 /// Represents a validator that validates if a date falls on a weekday.
 /// </summary>
-public class BeWeekdayValidator<T> : PropertyValidator<T, DateTime>
+public class BeWeekdayValidator<T> : PropertyValidator<T, DateTime?>
 {
     /// <inheritdoc />
     public override string Name => "BeWeekdayValidator";
 
     /// <inheritdoc />
-    public override bool IsValid(ValidationContext<T> context, DateTime value)
-        => value.DayOfWeek is not DayOfWeek.Saturday && value.DayOfWeek is not DayOfWeek.Sunday;
+    public override bool IsValid(ValidationContext<T> context, DateTime? value)
+        => value != DateTime.MinValue && value != DateTime.MaxValue && value is not null
+           && value.Value.DayOfWeek is not DayOfWeek.Saturday && value.Value.DayOfWeek is not DayOfWeek.Sunday;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)

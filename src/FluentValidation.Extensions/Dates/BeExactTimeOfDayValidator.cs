@@ -7,7 +7,7 @@ namespace FluentValidation;
 /// <summary>
 /// Represents a validator that validates if a date has an exact specified time of day.
 /// </summary>
-public class BeExactTimeOfDayValidator<T> : PropertyValidator<T, DateTime>
+public class BeExactTimeOfDayValidator<T> : PropertyValidator<T, DateTime?>
 {
     private readonly TimeSpan _timeOfDay;
 
@@ -24,8 +24,8 @@ public class BeExactTimeOfDayValidator<T> : PropertyValidator<T, DateTime>
     public override string Name => "BeExactTimeOfDayValidator";
 
     /// <inheritdoc />
-    public override bool IsValid(ValidationContext<T> context, DateTime value)
-        => value.TimeOfDay == _timeOfDay;
+    public override bool IsValid(ValidationContext<T> context, DateTime? value)
+        => value?.TimeOfDay == _timeOfDay;
 
     /// <inheritdoc />
     protected override string GetDefaultMessageTemplate(string errorCode)
