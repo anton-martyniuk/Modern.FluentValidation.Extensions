@@ -350,8 +350,6 @@ Validates that the string is a valid relative URL.
 RuleFor(x => x.UrlValue).IsRelativeUrl();
 ```
 
-:white_check_mark: **First version of package is scheduled to be released and pushed to Nuget in the early dates of November**
-
 ## Acknowledgments
 
 A big shoutout to the original [FluentValidation](https://github.com/FluentValidation/FluentValidation) library and its author for creating such a fantastic library. This package is built upon the foundation laid by the original library, and I am very grateful for the inspiration and the work put into it. Thank you!
