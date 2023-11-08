@@ -7,7 +7,7 @@ A big set of custom validators for popular FluentValidation library for a daily 
 
 ## Features
 A list of validators:
-- String validators
+- [String validators](#string-validators)
   - Contains
   - DoesNotContain
   - StartsWith
@@ -18,10 +18,10 @@ A list of validators:
   - BeNumeric
   - BeLatinLetters
   - NoSpecialCharacters
-- Boolean validators
+- [Boolean validators](#boolean-validators)
   - BeTrue
   - BeFalse
-- Collection validators
+- [Collection validators](#collection-validators)
   - HasElements
   - HasNoElements
   - HasCountOfElements
@@ -41,7 +41,7 @@ A list of validators:
   - Contains
   - DoesNotContain
   - AllElementsOfType
-- DateTime validators
+- [DateTime validators](#datetime-validators)
   - BeInFuture
   - BeInPast
   - BeLeapYear
@@ -54,60 +54,68 @@ A list of validators:
   - BeExactTimeOfDay
   - IsUtc
   - IsLocalTime
-- URL validators
+- [URL validators](#url-validators)
   - IsAbsoluteUrl
   - IsRelativeUrl
 
-## Example of usage
-
-### String validators
+## String validators
 
 #### Contains
+Validates that the string contains a specified substring.
 ```csharp
 RuleFor(x => x.StringValue).Contains("foo");
 ```
 
 #### DoesNotContain
+Validates that the string does not contain a specified substring.
 ```csharp
 RuleFor(x => x.StringValue).DoesNotContain("foo");
 ```
 
 #### StartsWith
+Validates that the string starts with a specified substring.
 ```csharp
 RuleFor(x => x.StringValue).StartsWith("foo");
 ```
 
 #### EndsWith
+Validates that the string ends with a specified substring.
 ```csharp
 RuleFor(x => x.StringValue).EndsWith("foo");
 ```
 
 #### DoesNotStartWith
+Validates that the string does not start with a specified substring.
 ```csharp
 RuleFor(x => x.StringValue).DoesNotStartWith("foo");
 ```
 
 #### DoesNotEndWith
+Validates that the string does not end with a specified substring.
 ```csharp
 RuleFor(x => x.StringValue).DoesNotEndWith("foo");
 ```
 
 #### LengthBetween
+Validates that the length of the string is between the specified minimum and maximum.
 ```csharp
 RuleFor(x => x.StringValue).LengthBetween(5, 10);
 ```
 
 #### BeNumeric
+Validates that the string consists only of numeric characters.
 ```csharp
 RuleFor(x => x.StringValue).BeNumeric();
 ```
 
 #### BeLatinLetters
+Validates that the string consists only of Latin letters.
 ```csharp
 RuleFor(x => x.StringValue).BeLatinLetters();
 ```
 
 #### NoSpecialCharacters
+Validates that the string does not contain any special characters.
 ```csharp
 RuleFor(x => x.StringValue).NoSpecialCharacters();
 ```
@@ -118,20 +126,22 @@ RuleFor(x => x.StringValue).NoSpecialCharacters("_.");
 ```
 
 
-### Boolean validators
+## Boolean validators
 
 #### BeTrue
+Validates that a value equals to true.
 ```csharp
 RuleFor(x => x.BooleanValue).BeTrue();
 ```
 
 #### BeFalse
+Validates that a value equals to false.
 ```csharp
 RuleFor(x => x.BooleanValue).BeFalse();
 ```
 
 
-### Collection validators
+## Collection validators
 
 #### HasElements
 Validates that a collection has elements.
@@ -251,6 +261,93 @@ public class TestClass
 }
 
 RuleFor(x => x.ObjectItems).AllElementsOfType(typeof(string));
+```
+
+## DateTime validators
+
+#### BeInFuture
+Validates that the date is in the future.
+```csharp
+RuleFor(x => x.DateValue).BeInFuture();
+```
+
+#### BeInPast
+Validates that the date is in the past.
+```csharp
+RuleFor(x => x.DateValue).BeInPast();
+```
+
+#### BeLeapYear
+Validates that the date is within a leap year.
+```csharp
+RuleFor(x => x.DateValue).BeLeapYear();
+```
+
+#### BeWeekday
+Validates that the date falls on a weekday.
+```csharp
+RuleFor(x => x.DateValue).BeWeekday();
+```
+
+#### BeWeekend
+Validates that the date falls on a weekend.
+```csharp
+RuleFor(x => x.DateValue).BeWeekend();
+```
+
+#### BeSpecificDayOfWeek
+Validates that the date falls on a specified day of the week.
+```csharp
+RuleFor(x => x.DateValue).BeSpecificDayOfWeek(DayOfWeek.Monday);
+```
+
+#### BeWithinRange
+Validates that the date is within a specified range.
+```csharp
+RuleFor(x => x.DateValue).BeWithinRange(startDate, endDate);
+```
+
+#### BeSpecificMonth
+Validates that the date is in a specific month.
+```csharp
+RuleFor(x => x.DateValue).BeSpecificMonth(month);
+```
+#### BeSpecificDay
+Validates that the date is on a specific day of the month.
+```csharp
+RuleFor(x => x.DateValue).BeSpecificDay(day);
+```
+
+#### BeExactTimeOfDay
+Validates that the date has an exact time of day.
+```csharp
+RuleFor(x => x.DateValue).BeExactTimeOfDay(new TimeSpan(hour, minute, second));
+```
+
+#### IsUtc
+Validates that the date is in UTC.
+```csharp
+RuleFor(x => x.DateValue).IsUtc();
+```
+
+#### IsLocalTime
+Validates that the date is local time.
+```csharp
+RuleFor(x => x.DateValue).IsLocalTime();
+```
+
+## URL validators
+
+#### IsAbsoluteUrl
+Validates that the string is a valid absolute URL.
+```csharp
+RuleFor(x => x.UrlValue).IsAbsoluteUrl();
+```
+
+#### IsRelativeUrl
+Validates that the string is a valid relative URL.
+```csharp
+RuleFor(x => x.UrlValue).IsRelativeUrl();
 ```
 
 :white_check_mark: **First version of package is scheduled to be released and pushed to Nuget in the early dates of November**
