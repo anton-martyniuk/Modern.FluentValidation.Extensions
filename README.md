@@ -8,55 +8,55 @@ A big set of custom validators for popular FluentValidation library for a daily 
 ## Features
 A list of validators:
 - [String validators](#string-validators)
-  - Contains
-  - DoesNotContain
-  - StartsWith
-  - EndsWith
-  - DoesNotStartWith
-  - DoesNotEndWith
-  - LengthBetween
-  - BeNumeric
-  - BeLatinLetters
-  - NoSpecialCharacters
+  - [Contains](#contains)
+  - [DoesNotContain](#doesnotcontain)
+  - [StartsWith](#startswith)
+  - [EndsWith](#endswith)
+  - [DoesNotStartWith](#doesnotstartwith)
+  - [DoesNotEndWith](#doesnotendwith)
+  - [LengthBetween](#lengthbetween)
+  - [BeNumeric](#benumeric)
+  - [BeLatinLetters](#belatinletters)
+  - [NoSpecialCharacters](#nospecialcharacters)
 - [Boolean validators](#boolean-validators)
-  - BeTrue
-  - BeFalse
+  - [BeTrue](#betrue)
+  - [BeFalse](#befalse)
 - [Collection validators](#collection-validators)
-  - HasElements
-  - HasNoElements
-  - HasCountOfElements
-  - HasElementsMoreThan
-  - HasElementsMoreOrEqualThan
-  - HasElementsLessThan
-  - HasElementsLessOrEqualThan
-  - HasElementsBetweenExclusive
-  - HasElementsBetweenInclusive
-  - HasEvenCountOfElements
-  - HasOddCountOfElements
-  - IsUnique
-  - HasDuplicates
-  - NoNullElements
-  - AllMatch
-  - AnyMatch
-  - Contains
-  - DoesNotContain
-  - AllElementsOfType
-- [DateTime validators](#datetime-validators)
-  - BeInFuture
-  - BeInPast
-  - BeLeapYear
-  - BeWeekday
-  - BeWeekend
-  - BeSpecificDayOfWeek
-  - BeWithinRange
-  - BeSpecificMonth
-  - BeSpecificDay
-  - BeExactTimeOfDay
-  - IsUtc
-  - IsLocalTime
+  - [HasElements](#haselements)
+  - [HasNoElements](#hasnoelements)
+  - [HasCountOfElements](#hascountofelements)
+  - [HasElementsMoreThan](#haselementsmorethan)
+  - [HasElementsMoreOrEqualThan](#haselementsmoreorequalthan)
+  - [HasElementsLessThan](#haselementslessthan)
+  - [HasElementsLessOrEqualThan](#haselementslessorequalthan)
+  - [HasElementsBetweenExclusive](#haselementsbetweenexclusive)
+  - [HasElementsBetweenInclusive](#haselementsbetweeninclusive)
+  - [HasEvenCountOfElements](#hasevencountofelements)
+  - [HasOddCountOfElements](#hasoddcountofelements)
+  - [IsUnique](#isunique)
+  - [HasDuplicates](#hasduplicates)
+  - [NoNullElements](#nonullelements)
+  - [AllMatch](#allmatch)
+  - [AnyMatch](#anymatch)
+  - [Contains](#contains-element)
+  - [DoesNotContain](#doesnotcontain-element)
+  - [AllElementsOfType](#allelementsoftype)
+- [DateTime validators](#datetimevalidators)
+  - [BeInFuture](#beinfuture)
+  - [BeInPast](#beinpast)
+  - [BeLeapYear](#beleapyear)
+  - [BeWeekday](#beweekday)
+  - [BeWeekend](#beweekend)
+  - [BeSpecificDayOfWeek](#bespecificdayofweek)
+  - [BeWithinRange](#bewithinrange)
+  - [BeSpecificMonth](#bespecificmonth)
+  - [BeSpecificDay](#bespecificday)
+  - [BeExactTimeOfDay](#beexacttimeofday)
+  - [IsUtc](#isutc)
+  - [IsLocalTime](#islocaltime)
 - [URL validators](#url-validators)
-  - IsAbsoluteUrl
-  - IsRelativeUrl
+  - [IsAbsoluteUrl](#isabsoluteurl)
+  - [IsRelativeUrl](#isrelativeurl)
 
 ## String validators
 
@@ -240,13 +240,13 @@ Validates that any element of collection matches the specified condition.
 RuleFor(x => x.Persons).AnyMatch(x => x.Age > 18);
 ```
 
-#### Contains
+#### Contains element
 Validates that a collection contains a specified value.
 ```csharp
 RuleFor(x => x.CollectionProperty).Contains(5);
 ```
 
-#### DoesNotContain
+#### DoesNotContain element
 Validates that a collection has doesn't contain a specified value.
 ```csharp
 RuleFor(x => x.CollectionProperty).DoesNotContain(5);
