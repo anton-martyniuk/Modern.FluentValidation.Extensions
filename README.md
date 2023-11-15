@@ -1,9 +1,9 @@
-# FluentValidation.Extensions
+# Modern.FluentValidation.Extensions
 A big set of custom validators for popular FluentValidation library for a daily usage
 
 ## Installation
 
-[Install a FluentValidation.Extensions nuget package](https://www.nuget.org/packages/FluentValidation.Extensions)
+[Install a FluentValidation.Extensions nuget package](https://www.nuget.org/packages/Modern.FluentValidation.Extensions)
 
 ## Features
 A list of validators:
