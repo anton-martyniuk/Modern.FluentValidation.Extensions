@@ -1,6 +1,8 @@
 # Modern.FluentValidation.Extensions
 A big set of custom validators for popular FluentValidation library for a daily usage
 
+[![CI](https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/actions/workflows/CI.yml/badge.svg)](https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/actions/workflows/CI.yml)
+
 ## Installation
 
 [Install a FluentValidation.Extensions nuget package](https://www.nuget.org/packages/Modern.FluentValidation.Extensions)
