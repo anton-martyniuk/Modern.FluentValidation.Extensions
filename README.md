@@ -1,7 +1,8 @@
+[![CI](https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/actions/workflows/CI.yml/badge.svg)](https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/actions/workflows/CI.yml)
+
+
 # Modern.FluentValidation.Extensions
 A big set of custom validators for popular FluentValidation library for a daily usage
-
-[![CI](https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/actions/workflows/CI.yml/badge.svg)](https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/actions/workflows/CI.yml)
 
 ## Installation
 
