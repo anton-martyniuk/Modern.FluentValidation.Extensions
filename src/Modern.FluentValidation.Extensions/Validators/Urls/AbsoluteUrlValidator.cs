@@ -18,7 +18,7 @@ public class AbsoluteUrlValidator<T> : PropertyValidator<T, string>
     /// <inheritdoc />
     /// </summary>
     public override bool IsValid(ValidationContext<T> context, string value)
-        => !string.IsNullOrWhiteSpace(value) && Uri.TryCreate(value, UriKind.Absolute, out _);
+        => !string.IsNullOrWhiteSpace(value) && !value.StartsWith("/") && Uri.TryCreate(value, UriKind.Absolute, out _);
     
     /// <summary>
     /// <inheritdoc />
