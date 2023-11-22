@@ -1,4 +1,4 @@
-[![CI](https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/actions/workflows/CI.yml/badge.svg)](https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/actions/workflows/CI.yml)
+[![Build & Tests](https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/actions/workflows/tests.yml/badge.svg)](https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/actions/workflows/tests.yml)
 
 
 # Modern.FluentValidation.Extensions
