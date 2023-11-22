@@ -14,17 +14,21 @@
         <Description>A big set of custom validators for a FluentValidation library for .NET that uses a fluent interface to construct strongly-typed validation rules.</Description>
         <PackageTags>validation, validators, fluentvalidation, extensions</PackageTags>
         <RepositoryUrl>https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions</RepositoryUrl>
-        <PackageLicenseUrl>https://github.com/anton-martyniuk/Modern.FluentValidation.Extensions/blob/main/LICENSE</PackageLicenseUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="FluentValidation" Version="11.8.1" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
     <Target Name="PostPackNugetDeploy" AfterTargets="Pack" Condition="'$(Configuration)'=='Release'">
