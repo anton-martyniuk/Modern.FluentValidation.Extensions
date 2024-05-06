@@ -7,7 +7,7 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
-        <Version>1.1.0</Version>
+        <Version>1.1.1</Version>
         <Authors>Anton Martyniuk</Authors>
         <Copyright>Copyright (c) Anton Martyniuk 2023</Copyright>
         <Title>A big set of custom validators for popular FluentValidation library for a daily usage</Title>
@@ -23,7 +23,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.9.0" />
+        <PackageReference Include="FluentValidation" Version="11.9.1" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
     </ItemGroup>
 
