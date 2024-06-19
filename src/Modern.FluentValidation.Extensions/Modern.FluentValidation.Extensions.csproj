@@ -7,9 +7,9 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
-        <Version>1.1.1</Version>
+        <Version>1.1.2</Version>
         <Authors>Anton Martyniuk</Authors>
-        <Copyright>Copyright (c) Anton Martyniuk 2023</Copyright>
+        <Copyright>Copyright (c) Anton Martyniuk 2024</Copyright>
         <Title>A big set of custom validators for popular FluentValidation library for a daily usage</Title>
         <Description>A big set of custom validators for a FluentValidation library for .NET that uses a fluent interface to construct strongly-typed validation rules.</Description>
         <PackageTags>validation, validators, fluentvalidation, extensions</PackageTags>
@@ -23,7 +23,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.9.1" />
+        <PackageReference Include="FluentValidation" Version="11.9.2" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
     </ItemGroup>
 
